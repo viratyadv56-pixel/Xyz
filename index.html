@@ -1,0 +1,1112 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src https://hnmperzzheyzgibcdreb.supabase.co https://nametade.app.n8n.cloud; img-src data:; base-uri 'none'">
+<title>XYZ Realty Owner Desk</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;500;600;700&family=Fraunces:opsz,wght@9..144,500;600&display=swap">
+<style>
+:root{
+  --bg:#F3EEE4; --surface:#FBF8F1; --surface-2:#EEE7D9; --ink:#1E1A14; --ink-2:#5E5648; --ink-3:#8B8272;
+  --line:#DDD3C1; --line-2:#CBBFA9;
+  --accent:#A43B1C; --accent-2:#862F15; --accent-soft:#F3DDD3; --on-accent:#FFF8F2;
+  --ok:#2B6A4C; --ok-soft:#DCEBDD; --warn:#8F5A06; --warn-soft:#F5E6C4; --bad:#A02626; --bad-soft:#F4D9D5; --info:#2B5C86; --info-soft:#D9E5EF;
+  --shadow:0 1px 0 rgba(30,26,20,.04),0 10px 28px -14px rgba(30,26,20,.28);
+  --f-display:'Fraunces',Georgia,'Times New Roman',serif;
+  --f-body:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --f-mono:'DM Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#14110D; --surface:#1C1813; --surface-2:#262017; --ink:#F2ECDF; --ink-2:#B3A994; --ink-3:#877E6B;
+    --line:#342E23; --line-2:#463E30;
+    --accent:#E27A52; --accent-2:#EE8D68; --accent-soft:#3A2218; --on-accent:#1B0E08;
+    --ok:#6CC49A; --ok-soft:#1B2E25; --warn:#E3B04F; --warn-soft:#352A12; --bad:#F08A80; --bad-soft:#3A1D1A; --info:#7FB2E0; --info-soft:#17283A;
+    --shadow:0 1px 0 rgba(0,0,0,.3),0 12px 30px -14px rgba(0,0,0,.75);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14110D; --surface:#1C1813; --surface-2:#262017; --ink:#F2ECDF; --ink-2:#B3A994; --ink-3:#877E6B;
+  --line:#342E23; --line-2:#463E30;
+  --accent:#E27A52; --accent-2:#EE8D68; --accent-soft:#3A2218; --on-accent:#1B0E08;
+  --ok:#6CC49A; --ok-soft:#1B2E25; --warn:#E3B04F; --warn-soft:#352A12; --bad:#F08A80; --bad-soft:#3A1D1A; --info:#7FB2E0; --info-soft:#17283A;
+  --shadow:0 1px 0 rgba(0,0,0,.3),0 12px 30px -14px rgba(0,0,0,.75);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--f-body);-webkit-font-smoothing:antialiased;min-height:100dvh}
+button,input,select,textarea{font:inherit;color:inherit}
+[hidden]{display:none!important}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;letter-spacing:-.012em;margin:0;text-wrap:balance;line-height:1.15}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-feature-settings:"tnum"}
+.muted{color:var(--ink-2)}
+.faint{color:var(--ink-3)}
+.ic{flex:none;display:block}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+/* ---------- buttons & inputs ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 16px;border-radius:10px;border:1px solid var(--line-2);background:var(--surface);cursor:pointer;font-weight:600;font-size:14px;white-space:nowrap;transition:background .15s,border-color .15s,transform .05s}
+.btn:hover{background:var(--surface-2)}
+.btn:active{transform:translateY(1px)}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{background:var(--accent-2);border-color:var(--accent-2)}
+.btn.danger{background:#B3261E;border-color:#B3261E;color:#fff}
+.btn.danger:hover{background:#962019;border-color:#962019}
+.btn.ghost{background:transparent}
+.btn.ghost.danger-t{color:var(--bad);border-color:transparent}
+.btn.ghost.danger-t:hover{background:var(--bad-soft)}
+.btn.sm{min-height:34px;padding:0 12px;font-size:13px}
+.icon-btn{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:10px;border:1px solid transparent;background:transparent;cursor:pointer;color:var(--ink-2)}
+.icon-btn:hover{background:var(--surface-2);color:var(--ink)}
+.linklike{background:none;border:0;padding:0;font-weight:700;text-align:left;cursor:pointer;color:var(--ink);font-size:15px}
+.linklike:hover{color:var(--accent);text-decoration:underline}
+.inp,.sel,textarea.inp{width:100%;min-height:42px;padding:9px 12px;border-radius:10px;border:1px solid var(--line-2);background:var(--bg);outline:none;transition:border-color .15s,box-shadow .15s}
+textarea.inp{resize:vertical;min-height:84px;line-height:1.45}
+.inp:focus,.sel:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.inp[readonly]{background:var(--surface-2);color:var(--ink-2)}
+.sel{width:auto;min-height:34px;padding:4px 8px;font-size:13px;font-weight:600;cursor:pointer}
+.sel.ok{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.sel.warn{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.sel.bad{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+.sel.info{background:var(--info-soft);color:var(--info);border-color:transparent}
+.sel.neutral,.sel.muted{background:var(--surface-2);color:var(--ink-2);border-color:transparent}
+select.sel option{background:var(--surface);color:var(--ink)}
+.fld{display:flex;flex-direction:column;gap:6px;min-width:0}
+.fl{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.hint{font-size:12px;color:var(--ink-3)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.span2{grid-column:1/-1}
+@media (max-width:400px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.form-err{color:var(--bad);font-size:13.5px;font-weight:600;background:var(--bad-soft);padding:9px 12px;border-radius:9px}
+.check{display:flex;align-items:center;gap:10px;font-weight:600;cursor:pointer;min-height:42px}
+.check input{width:18px;height:18px;accent-color:var(--accent)}
+.switch{position:relative;display:inline-block;width:42px;height:24px;flex:none}
+.switch input{position:absolute;inset:0;opacity:0;width:100%;height:100%;margin:0;cursor:pointer;z-index:1}
+.switch span{position:absolute;inset:0;border-radius:99px;background:var(--line-2);transition:background .15s}
+.switch span::after{content:"";position:absolute;left:3px;top:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform .15s;box-shadow:0 1px 2px rgba(0,0,0,.3)}
+.switch input:checked+span{background:var(--ok)}
+.switch input:checked+span::after{transform:translateX(18px)}
+.switch input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- chips ---------- */
+.chip{display:inline-flex;align-items:center;gap:5px;padding:2px 9px;border-radius:99px;font-size:12px;font-weight:700;line-height:1.6;background:var(--surface-2);color:var(--ink-2);white-space:nowrap}
+.chip.ok{background:var(--ok-soft);color:var(--ok)}
+.chip.warn{background:var(--warn-soft);color:var(--warn)}
+.chip.bad{background:var(--bad-soft);color:var(--bad)}
+.chip.info{background:var(--info-soft);color:var(--info)}
+.chip.muted{background:transparent;border:1px solid var(--line-2);color:var(--ink-3)}
+.chip.accent{background:var(--accent-soft);color:var(--accent)}
+
+/* ---------- login ---------- */
+.login{min-height:100dvh;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
+.login-art{position:relative;background:var(--accent);color:var(--on-accent);padding:clamp(24px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.login-art svg.plan{position:absolute;right:-6%;bottom:-4%;width:min(78%,520px);opacity:.34}
+.login-art .tag{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.login-art h2{font-size:clamp(30px,4.2vw,54px);max-width:12ch;position:relative}
+.login-card{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(24px,5vw,72px);padding-left:max(clamp(24px,5vw,72px),env(safe-area-inset-left,0px));padding-right:max(clamp(24px,5vw,72px),env(safe-area-inset-right,0px));max-width:560px;width:100%;margin:0 auto}
+.login-card h1{font-size:32px}
+.login-card form{display:flex;flex-direction:column;gap:14px;margin-top:4px}
+.pw-wrap{position:relative}
+.pw-wrap .inp{padding-right:46px}
+.pw-wrap button{position:absolute;right:2px;top:1px}
+.fine{font-size:12.5px;color:var(--ink-3)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:600;font-size:19px;letter-spacing:-.01em}
+.mark{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--accent);color:var(--on-accent);font-family:var(--f-display);font-size:18px;font-weight:600}
+.login-art .mark{background:var(--on-accent);color:var(--accent)}
+.brand small{display:block;font-family:var(--f-mono);font-weight:400;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-top:1px}
+@media (max-width:860px){
+  .login{grid-template-columns:minmax(0,1fr)}
+  .login-art{min-height:190px;padding:22px 20px}
+  .login-art h2{font-size:26px;max-width:none}
+  .login-art svg.plan{width:240px;right:-30px;bottom:-30px}
+}
+
+/* ---------- shell ---------- */
+.shell{display:grid;grid-template-columns:252px minmax(0,1fr);min-height:100dvh}
+.side{position:sticky;top:0;height:100dvh;display:flex;flex-direction:column;gap:22px;padding:22px 14px;border-right:1px solid var(--line);background:var(--surface);z-index:40}
+.side .brand{padding:0 8px}
+.nav{display:flex;flex-direction:column;gap:3px}
+.nav a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;color:var(--ink-2);text-decoration:none;font-weight:600;font-size:14.5px;cursor:pointer}
+.nav a:hover{background:var(--surface-2);color:var(--ink)}
+.nav a[aria-current="page"]{background:var(--accent-soft);color:var(--accent)}
+.nav .badge{margin-left:auto;font-family:var(--f-mono);font-size:11.5px;padding:1px 7px;border-radius:99px;background:var(--surface-2);color:var(--ink-2)}
+.nav a[aria-current="page"] .badge{background:var(--accent);color:var(--on-accent)}
+.side-foot{margin-top:auto;display:flex;flex-direction:column;gap:12px;padding:0 6px}
+.who{display:flex;align-items:center;gap:10px;min-width:0}
+.avatar{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--surface-2);font-weight:700;color:var(--accent);flex:none}
+.who-t{font-weight:700;font-size:14px}
+.who-s{font-size:11.5px;color:var(--ink-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.main{min-width:0;padding:30px clamp(16px,3.2vw,44px) 90px;padding-left:max(clamp(16px,3.2vw,44px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,3.2vw,44px),env(safe-area-inset-right,0px))}
+.topbar{display:none}
+.scrim{display:none}
+.vhead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.vhead h1{font-size:clamp(26px,3.4vw,36px)}
+.vhead .sub{color:var(--ink-2);margin-top:6px;font-size:14px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.vtool{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.vtool:empty{display:none}
+.vtool .search{position:relative;flex:1 1 240px;max-width:420px}
+.vtool .search .ic{position:absolute;left:12px;top:12px;color:var(--ink-3);pointer-events:none}
+.vtool .search .inp{padding-left:38px}
+.vtool .sel{min-height:42px;font-size:14px;background:var(--surface);color:var(--ink);border-color:var(--line-2)}
+.seg{display:inline-flex;padding:3px;gap:2px;border-radius:11px;background:var(--surface-2);flex-wrap:wrap}
+.seg button{border:0;background:transparent;padding:7px 13px;border-radius:8px;font-weight:600;font-size:13.5px;color:var(--ink-2);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+@media (max-width:900px){
+  .shell{grid-template-columns:minmax(0,1fr)}
+  .side{position:fixed;inset:0 auto 0 0;width:min(290px,86vw);transform:translateX(-104%);transition:transform .22s ease;box-shadow:var(--shadow)}
+  body.nav-open .side{transform:none}
+  body.nav-open .scrim{display:block;position:fixed;inset:0;background:rgba(20,16,10,.5);z-index:30}
+  .topbar{display:flex;align-items:center;gap:8px;margin:-10px -6px 14px}
+  .topbar .t{font-family:var(--f-display);font-weight:600;font-size:18px;flex:1}
+  .main{padding-top:max(18px,env(safe-area-inset-top,0px))}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- cards & lists ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.card-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px 0}
+.card-h h3{font-size:18px}
+.card-b{padding:14px 18px 18px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:14px;margin-bottom:16px}
+@media (max-width:600px){.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{padding:14px}.stat .v{font-size:30px}.vhead .actions [data-action=refresh]{display:none}}
+.stat{padding:16px 18px;border-radius:16px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);min-width:0}
+.stat .k{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.stat .v{font-family:var(--f-display);font-size:38px;font-weight:600;line-height:1.1;margin:6px 0 4px;letter-spacing:-.02em}
+.stat .s{font-size:13px;color:var(--ink-3)}
+.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:16px}
+@media (max-width:980px){.cols2{grid-template-columns:minmax(0,1fr)}}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.item{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.item.click{cursor:pointer}
+.item.click:hover{background:var(--surface-2)}
+.item .c1{flex:2 1 210px;min-width:0}
+.item .c2{flex:2 1 200px;min-width:0}
+.item .c3{flex:0 1 auto;display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
+.item .c0{flex:0 0 74px}
+.item .t{font-weight:700;overflow-wrap:anywhere}
+.item .m{font-size:13px;color:var(--ink-2);overflow-wrap:anywhere}
+.when-d{font-weight:700}
+.when-t{font-size:13px;color:var(--ink-2)}
+.empty{padding:40px 20px;text-align:center;color:var(--ink-2)}
+.empty b{display:block;font-family:var(--f-display);font-size:19px;color:var(--ink);margin-bottom:4px}
+.alert{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:12px 16px;border-radius:12px;margin-bottom:16px;font-weight:500}
+.alert.warn{background:var(--warn-soft);color:var(--warn)}
+.alert.bad{background:var(--bad-soft);color:var(--bad)}
+.alert.info{background:var(--info-soft);color:var(--info)}
+.alert .btn{margin-left:auto}
+.bars{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:6px;align-items:end;height:150px;margin-top:8px}
+.bar{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;height:100%}
+.bar i{display:block;width:100%;border-radius:5px 5px 2px 2px;background:var(--accent)}
+.bar i.z{background:var(--line)}
+.bar .bv{font-family:var(--f-mono);font-size:11px;color:var(--ink-2);height:14px}
+.bar .bl{font-family:var(--f-mono);font-size:10.5px;color:var(--ink-3)}
+.fun{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.fun-r{display:grid;grid-template-columns:110px minmax(0,1fr) 34px;gap:10px;align-items:center;font-size:13.5px}
+.fun-t{height:10px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.fun-t i{display:block;height:100%;border-radius:99px;background:var(--accent)}
+.fun-r .n{font-family:var(--f-mono);text-align:right;color:var(--ink-2)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.pcard{display:flex;flex-direction:column;gap:8px;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);min-width:0}
+.pcard.sold{opacity:.72}
+.pc-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.pcard h3{font-size:19px;overflow-wrap:anywhere}
+.pc-price{font-family:var(--f-display);font-size:28px;font-weight:600;letter-spacing:-.02em;margin-top:2px}
+.pc-price small{font-family:var(--f-mono);font-size:12px;font-weight:400;color:var(--ink-3);letter-spacing:0;margin-left:6px}
+.pc-meta{font-size:13.5px;color:var(--ink-2)}
+.pc-chips{display:flex;flex-wrap:wrap;gap:6px}
+.pc-foot{margin-top:auto;padding-top:8px;display:flex;justify-content:flex-end}
+.speaker{display:grid;grid-template-columns:78px minmax(0,1fr);gap:10px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.speaker:last-child{border-bottom:0}
+.speaker b{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);padding-top:2px}
+.speaker.ai b{color:var(--accent)}
+.speaker span{overflow-wrap:anywhere;white-space:pre-wrap}
+.tx{max-height:320px;overflow:auto;border:1px solid var(--line);border-radius:12px;padding:6px 14px;background:var(--bg)}
+.sec-t{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin:18px 0 8px}
+.mini{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.mini>div{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid var(--line);font-size:13.5px;flex-wrap:wrap}
+.mini>div:last-child{border-bottom:0}
+details.diff summary{cursor:pointer;font-size:13px;color:var(--accent);font-weight:600;margin-top:6px}
+.diff-b{margin-top:8px;font-family:var(--f-mono);font-size:12px;display:flex;flex-direction:column;gap:3px;color:var(--ink-2);overflow-wrap:anywhere}
+.diff-b s{color:var(--bad)}
+.diff-b ins{color:var(--ok);text-decoration:none}
+.sk{height:78px;border-radius:16px;background:linear-gradient(90deg,var(--surface-2),var(--surface),var(--surface-2));background-size:200% 100%;animation:sh 1.3s infinite linear;margin-bottom:12px}
+@keyframes sh{to{background-position:-200% 0}}
+.set-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.set-grid .card-b{display:flex;flex-direction:column;gap:14px}
+ul.plain{margin:0;padding-left:18px;color:var(--ink-2);font-size:14px;display:flex;flex-direction:column;gap:6px}
+
+/* ---------- dialog ---------- */
+dialog.dlg{padding:0;border:1px solid var(--line-2);border-radius:20px;background:var(--surface);color:var(--ink);width:min(580px,calc(100vw - 24px));max-height:calc(100dvh - 24px);box-shadow:0 30px 80px -20px rgba(0,0,0,.55)}
+dialog.dlg.wide{width:min(720px,calc(100vw - 24px))}
+dialog.dlg[open]{display:flex}
+dialog.dlg::backdrop{background:rgba(20,16,10,.58);backdrop-filter:blur(2px)}
+.dlg-in{display:flex;flex-direction:column;min-width:0;width:100%;max-height:calc(100dvh - 24px)}
+.dlg-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px 12px 22px;border-bottom:1px solid var(--line)}
+.dlg-h h2{font-size:21px;overflow-wrap:anywhere}
+.dlg-b{padding:18px 22px;overflow:auto;display:flex;flex-direction:column;gap:14px;min-height:0}
+.dlg-f{display:flex;gap:10px;justify-content:flex-end;align-items:center;padding:14px 22px;border-top:1px solid var(--line);flex-wrap:wrap}
+.dlg-f .sp{margin-right:auto}
+.lockline{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink-2)}
+@media (max-width:600px){
+  dialog.dlg,dialog.dlg.wide{width:100vw;max-width:100vw;margin:auto 0 0;border-radius:20px 20px 0 0;max-height:94dvh}
+  .dlg-in{max-height:94dvh}
+}
+
+/* ---------- toast & idle ---------- */
+.toasts{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;flex-direction:column;gap:8px;z-index:200;width:min(440px,calc(100vw - 24px));pointer-events:none}
+.toast{padding:12px 16px;border-radius:12px;background:var(--ink);color:var(--bg);font-weight:600;font-size:14px;box-shadow:var(--shadow);animation:up .2s ease}
+.toast.bad{background:#A32A22;color:#fff}
+.toast.ok{background:#25624A;color:#fff}
+@keyframes up{from{transform:translateY(8px);opacity:0}}
+.idle{position:fixed;left:0;right:0;top:0;z-index:300;padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top,0px));background:#8F5A06;color:#fff;font-weight:700;text-align:center}
+.boot{min-height:100dvh;display:grid;place-items:center;color:var(--ink-2);font-family:var(--f-mono);font-size:13px;letter-spacing:.06em}
+</style>
+</head>
+<body>
+<noscript><p style="padding:24px;font-family:system-ui">Yeh dashboard chalane ke liye JavaScript on karna zaroori hai.</p></noscript>
+<div id="app"><div class="boot">LOADING…</div></div>
+<div class="idle" id="idle" hidden role="alert"></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script>
+(function(){
+'use strict';
+
+/* ================= config ================= */
+var SUPABASE_URL = 'https://hnmperzzheyzgibcdreb.supabase.co';
+var SUPABASE_KEY = 'sb_publishable_d94PxiH1uuyDXhDbCOk7Hg_TiQRf2aE';   // publishable key: safe in browser. Real protection = RLS + login.
+var OUTBOUND_URL = 'https://nametade.app.n8n.cloud/webhook/xyz-outbound-call-q7m2k9x4v1';   // n8n: owner login token check + consent / do-not-call check. Abhi dry-run.
+var IDLE_LIMIT_MS = 15*60*1000, IDLE_WARN_MS = 14*60*1000, POLL_MS = 45*1000;
+var IST = 'Asia/Kolkata';
+
+/* clickjacking guard: the hosted (http/https) page refuses to run inside someone else's frame.
+   It shows a visible message instead of a blank screen. Local file / preview contexts are not affected. */
+var framed = false; try { framed = window.top !== window.self; } catch (e) { framed = true; }
+if (framed && /^https?:$/.test(location.protocol)) {
+  document.getElementById('app').innerHTML = '<div class="boot" style="padding:24px;text-align:center;line-height:1.7">Security ke liye yeh page kisi doosre page ya app ke andar nahi chalta.<br>Is link ko seedha browser me kholo.</div>';
+  return;
+}
+
+var $ = function(s, r){ return (r||document).querySelector(s); };
+var app = $('#app');
+var esc = function(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
+
+/* ================= theme ================= */
+function lsGet(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+function lsSet(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+function applyTheme(p){
+  var r = document.documentElement;
+  if (p === 'light' || p === 'dark') r.setAttribute('data-theme', p); else r.removeAttribute('data-theme');
+}
+applyTheme(lsGet('xyz-theme') || 'auto');
+
+/* ================= icons ================= */
+var I = {
+  grid:'<rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/>',
+  users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14.4c2 .7 3.5 2.5 3.5 5.6"/>',
+  building:'<path d="M4 21V5.5L12 3l8 2.5V21"/><path d="M2.5 21h19"/><path d="M8.5 9h2M13.5 9h2M8.5 13h2M13.5 13h2"/><path d="M10.5 21v-4h3v4"/>',
+  calendar:'<rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+  phone:'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+  list:'<path d="M4 6h16M4 12h16M4 18h10"/>',
+  sliders:'<path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/>',
+  logout:'<path d="M9 4H5.5A1.5 1.5 0 0 0 4 5.5v13A1.5 1.5 0 0 0 5.5 20H9"/><path d="M16 8l4 4-4 4M20 12H9"/>',
+  menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  x:'<path d="M6 6l12 12M18 6L6 18"/>',
+  search:'<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>',
+  lock:'<rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>',
+  refresh:'<path d="M20 11a8 8 0 0 0-14.3-4.5L4 8.5M4 4v4.5h4.5M4 13a8 8 0 0 0 14.3 4.5L20 15.5M20 20v-4.5h-4.5"/>',
+  eye:'<path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  eyeoff:'<path d="M3 3l18 18M10.6 6a9.6 9.6 0 0 1 1.4-.1c6.4 0 10 6.1 10 6.1a17 17 0 0 1-3.2 3.9M6.3 7.3A16.5 16.5 0 0 0 2 12s3.6 6.5 10 6.5c1.5 0 2.8-.3 4-.8"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>',
+  inb:'<path d="M17 7L7 17M7 9v8h8"/>',
+  outb:'<path d="M7 17L17 7M9 7h8v8"/>'
+};
+function ic(n, s){ s = s || 18; return '<svg class="ic" width="'+s+'" height="'+s+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+I[n]+'</svg>'; }
+
+/* ================= labels ================= */
+var LEAD_STATUS = {new:['Naya','info'],contacted:['Contacted','neutral'],interested:['Interested','warn'],visit_booked:['Visit booked','ok'],not_interested:['Not interested','muted'],do_not_call:['Do not call','bad']};
+var PROP_STATUS = {available:['Available','ok'],hold:['Hold','warn'],sold:['Sold','muted']};
+var VISIT_STATUS = {scheduled:['Scheduled','info'],completed:['Completed','ok'],cancelled:['Cancelled','muted'],no_show:['No show','bad']};
+var OUTCOME = {visit_booked:['Visit booked','ok'],interested:['Interested','warn'],callback:['Callback','info'],not_interested:['Not interested','muted'],no_answer:['No answer','neutral'],do_not_call:['Do not call','bad'],other:['Other','neutral']};
+var PTYPE = {flat:'Flat',floor:'Builder floor',villa:'Villa',plot:'Plot',commercial:'Commercial'};
+var SOURCES = {inbound:'Inbound call',outbound:'Outbound call',website:'Website',manual:'Manual'};
+var TABLE_LABEL = {leads:'Lead',properties:'Property',site_visits:'Visit'};
+
+/* ================= formatters ================= */
+function numOrNull(v){ if (v == null) return null; v = String(v).trim(); if (v === '') return null; var n = Number(v); return isFinite(n) ? n : null; }
+function fmtPrice(l){ if (l == null || l === '') return '—'; l = Number(l); if (l >= 100) return '₹' + parseFloat((l/100).toFixed(2)) + ' Cr'; return '₹' + parseFloat(l.toFixed(2)) + ' L'; }
+function fmtBudget(a,b){ if (a == null && b == null) return ''; if (a != null && b != null) return fmtPrice(a) + ' – ' + fmtPrice(b); return a != null ? fmtPrice(a) + '+' : 'upto ' + fmtPrice(b); }
+function fmtPhone(p){ if (!p) return '—'; var m = /^\+91(\d{5})(\d{5})$/.exec(p); return m ? '+91 ' + m[1] + ' ' + m[2] : p; }
+function normPhone(s){ var d = String(s||'').replace(/\D/g,''); if (d.length === 12 && d.indexOf('91') === 0) d = d.slice(2); else if (d.length === 11 && d[0] === '0') d = d.slice(1); return /^[6-9]\d{9}$/.test(d) ? '+91' + d : null; }
+function fmtDur(s){ if (!s) return '0:00'; return Math.floor(s/60) + ':' + String(s%60).padStart(2,'0'); }
+function istKey(d){ return d.toLocaleDateString('en-CA',{timeZone:IST}); }
+function fmtDateTime(iso){
+  if (!iso) return '—'; var d = new Date(iso), o = {timeZone:IST,day:'numeric',month:'short',hour:'numeric',minute:'2-digit',hour12:true};
+  if (istKey(d).slice(0,4) !== istKey(new Date()).slice(0,4)) o.year = '2-digit';
+  return d.toLocaleString('en-IN', o);
+}
+function fmtDay(iso){ var d = new Date(iso), o = {timeZone:IST,day:'numeric',month:'short'}; if (istKey(d).slice(0,4) !== istKey(new Date()).slice(0,4)) o.year = '2-digit'; return d.toLocaleDateString('en-IN', o); }
+function fmtTime(iso){ return new Date(iso).toLocaleTimeString('en-IN',{timeZone:IST,hour:'numeric',minute:'2-digit',hour12:true}); }
+function rel(iso){
+  var s = (Date.now() - new Date(iso).getTime())/1000;
+  if (s < 0) return fmtDateTime(iso);
+  if (s < 60) return 'abhi'; var m = Math.floor(s/60); if (m < 60) return m + ' min pehle';
+  var h = Math.floor(m/60); if (h < 24) return h + ' ghante pehle';
+  var d = Math.floor(h/24); if (d < 7) return d + ' din pehle';
+  return fmtDay(iso);
+}
+function istParts(d){
+  var f = new Intl.DateTimeFormat('en-CA',{timeZone:IST,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}), o = {};
+  f.formatToParts(d).forEach(function(p){ o[p.type] = p.value; });
+  return o;
+}
+function toISTInput(iso){ var p = istParts(new Date(iso)); return p.year+'-'+p.month+'-'+p.day+'T'+p.hour+':'+p.minute; }
+function fromISTInput(s){ var d = new Date(s + ':00+05:30'); return isNaN(d) ? null : d.toISOString(); }
+function initials(n){ return (n||'?').trim().split(/\s+/).slice(0,2).map(function(w){ return w[0]; }).join('').toUpperCase() || '?'; }
+function setPath(o, path, v){ var k = path.split('.'); for (var i = 0; i < k.length-1; i++) o = o[k[i]]; o[k[k.length-1]] = v; }
+
+/* ================= state ================= */
+var state = {user:null, leads:[], properties:[], visits:[], calls:[], audit:[], loadedAt:null, err:null};
+var ui = {view:'overview', leads:{q:'',status:'',source:''}, properties:{q:'',type:'',status:''}, visits:{range:'upcoming',status:'',q:''}, calls:{q:'',outcome:'',dir:''}, activity:{table:''}};
+var leadById = function(id){ return state.leads.find(function(x){ return x.id === id; }); };
+var propById = function(id){ return state.properties.find(function(x){ return x.id === id; }); };
+
+/* ================= supabase client ================= */
+if (!window.supabase || !window.supabase.createClient) {
+  app.innerHTML = '<div class="boot" style="padding:24px;text-align:center">Supabase library load nahi hui.<br>Internet check karke page reload karo.</div>';
+  return;
+}
+function memStore(){ var m = {}; return {getItem:function(k){ return k in m ? m[k] : null; }, setItem:function(k,v){ m[k] = String(v); }, removeItem:function(k){ delete m[k]; }}; }
+function authStore(){ try { var s = window.sessionStorage; s.setItem('__t','1'); s.removeItem('__t'); return s; } catch(e){ return memStore(); } }
+// sessionStorage: tab band hote hi login khatam. Phone/laptop kisi ke haath lage to bhi purana session nahi milega.
+var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {auth:{persistSession:true, autoRefreshToken:true, detectSessionInUrl:false, storage:authStore(), storageKey:'xyz-owner-auth'}});
+
+function isAuthErr(e){ return !!e && (e.status === 401 || e.code === 'PGRST301' || /jwt|not authenticated/i.test(e.message || '')); }
+function friendly(e){
+  var c = e.code, m = e.message || String(e);
+  if (c === '23505') return 'Ye phone / record pehle se maujood hai.';
+  if (c === '42501') return 'Permission nahi hai.';
+  if (c === 'PGRST116') return 'Row nahi mila ya permission nahi hai.';
+  if (c === '23514') return 'Koi value allowed range me nahi hai.';
+  if (c === '23503') return 'Ye record kisi aur data se juda hua hai.';
+  return m;
+}
+function handleErr(e, ctx){
+  if (isAuthErr(e)) { doLogout('Session expire ho gaya. Dobara login karo.'); return; }
+  toast((ctx ? ctx + ': ' : '') + friendly(e), 'bad');
+}
+
+/* ================= toast ================= */
+function toast(msg, kind){
+  var t = document.createElement('div'); t.className = 'toast ' + (kind || ''); t.textContent = msg;
+  $('#toasts').appendChild(t); setTimeout(function(){ t.remove(); }, kind === 'bad' ? 6000 : 3200);
+}
+
+/* ================= dialogs ================= */
+function openDialog(html, opt){
+  opt = opt || {};
+  var d = document.createElement('dialog'); d.className = 'dlg' + (opt.wide ? ' wide' : '');
+  d.innerHTML = html; document.body.appendChild(d);
+  d.addEventListener('close', function(){ d.remove(); if (opt.onClose) opt.onClose(); });
+  if (opt.backdrop) d.addEventListener('click', function(e){ if (e.target === d) d.close(); });
+  d.showModal();
+  var f = d.querySelector('[data-focus]') || d.querySelector('input:not([readonly]),select,textarea'); if (f && !opt.noFocus) f.focus();
+  return d;
+}
+function setBusy(form, on){ Array.prototype.forEach.call(form.querySelectorAll('button[type=submit]'), function(b){ b.disabled = on; }); }
+function formErr(form, msg){ var e = form.querySelector('.form-err'); if (!e) return; e.textContent = msg || ''; e.hidden = !msg; }
+function dlgHead(title){ return '<header class="dlg-h"><h2>'+esc(title)+'</h2><button type="button" class="icon-btn" data-action="close-dlg" aria-label="Close">'+ic('x')+'</button></header>'; }
+function fld(label, inner, o){ o = o || {}; return '<label class="fld'+(o.span ? ' span2' : '')+'"><span class="fl">'+esc(label)+'</span>'+inner+(o.hint ? '<span class="hint">'+esc(o.hint)+'</span>' : '')+'</label>'; }
+function opts(map, cur, blank){
+  var h = blank != null ? '<option value="">'+esc(blank)+'</option>' : '';
+  Object.keys(map).forEach(function(k){ var l = Array.isArray(map[k]) ? map[k][0] : map[k]; h += '<option value="'+esc(k)+'"'+(k === cur ? ' selected' : '')+'>'+esc(l)+'</option>'; });
+  return h;
+}
+function chip(map, k){ var m = map[k]; return m ? '<span class="chip '+m[1]+'">'+esc(m[0])+'</span>' : '<span class="chip">'+esc(k || '—')+'</span>'; }
+function statusSel(map, cur, change, id){ return '<select class="sel '+(map[cur] ? map[cur][1] : '')+'" data-change="'+change+'" data-id="'+esc(id)+'" aria-label="Status">'+opts(map, cur)+'</select>'; }
+
+/* password re-check for destructive / sensitive actions */
+async function verifyPassword(pw){
+  var c = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {auth:{persistSession:false, autoRefreshToken:false, detectSessionInUrl:false, storageKey:'xyz-reauth'}});
+  var r = await c.auth.signInWithPassword({email:state.user.email, password:pw});
+  if (r.error || !r.data || !r.data.user) return false;
+  var same = r.data.user.id === state.user.id;
+  try { await c.auth.signOut({scope:'local'}); } catch(e){}
+  return same;
+}
+function confirmWithPassword(o){
+  return new Promise(function(resolve){
+    var tries = 0, done = false;
+    function finish(v){ if (!done) { done = true; resolve(v); } }
+    var d = openDialog('<form class="dlg-in" autocomplete="off">'+dlgHead(o.title)+
+      '<div class="dlg-b"><p>'+esc(o.message || '')+'</p><div class="lockline">'+ic('lock',16)+' Owner password dobara daalo</div>'+
+      fld('Password','<input class="inp" type="password" name="pw" autocomplete="current-password" required data-focus>')+
+      '<p class="form-err" role="alert" hidden></p></div>'+
+      '<footer class="dlg-f"><button type="button" class="btn ghost" data-action="close-dlg">Cancel</button><button type="submit" class="btn '+(o.danger ? 'danger' : 'primary')+'">'+esc(o.confirmLabel || 'Confirm')+'</button></footer></form>',
+      {onClose:function(){ finish(false); }});
+    var form = d.querySelector('form');
+    form.addEventListener('submit', async function(e){
+      e.preventDefault(); formErr(form,''); var pw = form.elements.pw.value; if (!pw) return;
+      setBusy(form, true);
+      var ok = false; try { ok = await verifyPassword(pw); } catch(x){}
+      setBusy(form, false);
+      if (ok) { finish(true); d.close(); return; }
+      tries++; form.elements.pw.value = '';
+      if (tries >= 5) { finish(false); d.close(); doLogout('Bahut galat password attempts. Security ke liye logout kar diya.'); return; }
+      formErr(form, 'Password galat hai. ('+(5-tries)+' try bache)');
+    });
+  });
+}
+
+/* ================= login / logout ================= */
+var failCount = 0, lockUntil = 0;
+function teardown(){
+  stopTimers(); state.user = null; state.leads = []; state.properties = []; state.visits = []; state.calls = []; state.audit = []; state.err = null; state.loadedAt = null;
+  Array.prototype.forEach.call(document.querySelectorAll('dialog'), function(d){ try { d.close(); } catch(e){} });
+  document.body.classList.remove('nav-open'); $('#idle').hidden = true;
+  ui.view = 'overview'; ['leads','properties','visits','calls','activity'].forEach(function(k){ Object.keys(ui[k]).forEach(function(f){ ui[k][f] = (k === 'visits' && f === 'range') ? 'upcoming' : ''; }); });
+}
+async function doLogout(msg, scope){
+  var had = !!state.user; teardown(); showLogin(msg);
+  if (had || scope) { try { await sb.auth.signOut({scope:scope || 'local'}); } catch(e){} }
+}
+var PLAN = '<svg class="plan" viewBox="0 0 420 520" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="24" y="24" width="372" height="472" rx="4"/><path d="M24 230H190M250 230H396M190 24V150M190 190V230M250 230V330M250 372V496M24 350H150M190 350H250"/><path d="M190 150a40 40 0 0 1 40 40M150 350a30 30 0 0 0 30 30" stroke-dasharray="3 4"/><path d="M60 460h120M60 452v16M180 452v16" stroke-width="1.2"/><text x="64" y="120" fill="currentColor" stroke="none" font-family="DM Mono,monospace" font-size="13">2 BHK</text><text x="270" y="130" fill="currentColor" stroke="none" font-family="DM Mono,monospace" font-size="13">1,050 sq ft</text><text x="64" y="445" fill="currentColor" stroke="none" font-family="DM Mono,monospace" font-size="11">12\' 6"</text></svg>';
+function showLogin(msg){
+  app.innerHTML =
+  '<main class="login"><section class="login-art" aria-hidden="true">'+PLAN+
+    '<div class="brand"><span class="mark">X</span><span>XYZ Realty<small>Owner Desk</small></span></div>'+
+    '<div><p class="tag" style="margin-bottom:14px">Faridabad · Haryana</p><h2>Poora karobaar, ek hi jagah.</h2></div></section>'+
+  '<section class="login-card"><div><h1>Owner login</h1><p class="muted" style="margin-top:8px">Yeh dashboard sirf owner ke liye hai. Bina login ke na kuchh dikhega, na kuchh badlega.</p></div>'+
+    '<form id="loginForm" autocomplete="on">'+
+      fld('Email','<input class="inp" type="email" name="email" autocomplete="username" required data-focus>')+
+      fld('Password','<span class="pw-wrap"><input class="inp" type="password" name="password" autocomplete="current-password" required><button type="button" class="icon-btn" data-action="toggle-pw" aria-label="Password dikhao">'+ic('eye')+'</button></span>')+
+      '<p class="form-err" role="alert"'+(msg ? '' : ' hidden')+'>'+esc(msg || '')+'</p>'+
+      '<button class="btn primary" type="submit" style="min-height:46px">'+ic('lock',16)+' Login</button>'+
+    '</form>'+
+    '<p class="fine">15 minute idle rehne par auto-logout. Tab band karte hi session khatam.</p></section></main>';
+  var f = $('#loginForm'); f.addEventListener('submit', onLogin);
+  var em = f.elements.email; if (em) em.focus();
+}
+async function onLogin(e){
+  e.preventDefault(); var f = e.target; formErr(f,'');
+  var now = Date.now(); if (now < lockUntil) { formErr(f, 'Bahut galat attempts. ' + Math.ceil((lockUntil-now)/1000) + ' second baad try karo.'); return; }
+  var email = f.elements.email.value.trim(), password = f.elements.password.value;
+  if (!email || !password) return;
+  setBusy(f, true);
+  var r = await sb.auth.signInWithPassword({email:email, password:password});
+  if (r.error) {
+    setBusy(f, false); f.elements.password.value = ''; failCount++;
+    if (failCount >= 5) { failCount = 0; lockUntil = Date.now() + 30000; formErr(f, 'Bahut galat attempts. 30 second ruko.'); return; }
+    formErr(f, /invalid login/i.test(r.error.message) ? 'Email ya password galat hai.' : r.error.message); return;
+  }
+  failCount = 0;
+  await enter(r.data.user);
+}
+async function enter(user){
+  var r = await sb.rpc('dashboard_access');
+  if (r.error || r.data !== true) {
+    try { await sb.auth.signOut({scope:'local'}); } catch(e){}
+    showLogin(r.error ? 'Access check fail hua: ' + r.error.message : 'Yeh account owner list me nahi hai. Access nahi mila.');
+    return false;
+  }
+  state.user = user; showApp(); startTimers(); await loadAll();
+  return true;
+}
+
+/* ================= shell ================= */
+var NAV = [['overview','Overview','grid'],['leads','Leads','users'],['properties','Properties','building'],['visits','Site visits','calendar'],['calls','Call logs','phone'],['activity','Activity log','list'],['settings','Settings','sliders']];
+function showApp(){
+  app.innerHTML =
+  '<div class="shell"><aside class="side" id="side" aria-label="Menu"><div class="brand"><span class="mark">X</span><span>XYZ Realty<small>Owner Desk</small></span></div>'+
+    '<nav class="nav" id="nav">'+NAV.map(function(n){ return '<a data-action="go" data-view="'+n[0]+'" tabindex="0" role="link">'+ic(n[2],19)+'<span>'+n[1]+'</span><span class="badge" id="nb-'+n[0]+'" hidden></span></a>'; }).join('')+'</nav>'+
+    '<div class="side-foot"><div class="who"><span class="avatar">'+esc(initials((state.user.email||'O').split('@')[0]))+'</span><div style="min-width:0"><div class="who-t">Owner</div><div class="who-s">'+esc(state.user.email)+'</div></div></div>'+
+    '<button class="btn ghost sm" data-action="logout">'+ic('logout',16)+' Logout</button></div></aside>'+
+  '<div class="scrim" data-action="nav-close"></div>'+
+  '<div class="main"><div class="topbar"><button class="icon-btn" data-action="nav-open" aria-label="Menu">'+ic('menu',22)+'</button><span class="t" id="ttl">XYZ Realty</span><button class="icon-btn" data-action="refresh" aria-label="Refresh">'+ic('refresh')+'</button></div>'+
+    '<header class="vhead" id="vhead"></header><div class="vtool" id="vtool"></div><div id="errbar"></div><section id="vbody"><div class="sk"></div><div class="sk"></div><div class="sk"></div></section></div></div>';
+  var h = (location.hash || '').slice(1); ui.view = isView(h) ? h : 'overview';
+  renderView();
+}
+function renderView(){
+  var v = VIEWS[ui.view];
+  $('#vhead').innerHTML = '<div><h1>'+esc(v.title)+'</h1><p class="sub" id="vsub"></p></div><div class="actions">'+(v.actions ? v.actions() : '')+'</div>';
+  $('#vtool').innerHTML = v.toolbar ? v.toolbar() : '';
+  renderBody(); updateNav();
+}
+function renderBody(){
+  if (!state.user) return;
+  var v = VIEWS[ui.view];
+  $('#vbody').innerHTML = v.body(); var s = $('#vsub'); if (s) s.textContent = v.sub();
+  var eb = $('#errbar'); eb.innerHTML = state.err ? '<div class="alert bad">Data load nahi hua: '+esc(state.err)+'<button class="btn sm" data-action="refresh">Retry</button></div>' : '';
+  if (ui.view === 'settings') bindSettings();
+}
+function isView(h){ return Object.prototype.hasOwnProperty.call(VIEWS, h); }
+function updateNav(){
+  Array.prototype.forEach.call(document.querySelectorAll('#nav a'), function(a){ if (a.dataset.view === ui.view) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+  var nn = state.leads.filter(function(l){ return l.status === 'new'; }).length;
+  var up = state.visits.filter(function(v){ return v.status === 'scheduled' && new Date(v.visit_at) >= Date.now(); }).length;
+  [['leads',nn],['visits',up]].forEach(function(p){ var b = $('#nb-'+p[0]); if (b) { b.textContent = p[1]; b.hidden = !p[1]; } });
+}
+window.addEventListener('hashchange', function(){
+  if (!state.user) return; var h = (location.hash || '').slice(1);
+  if (isView(h) && h !== ui.view) { ui.view = h; document.body.classList.remove('nav-open'); renderView(); window.scrollTo(0,0); }
+});
+
+/* ================= data ================= */
+var loadingP = null;
+async function loadAudit(){
+  if (!state.user) return; var r = await sb.from('audit_log').select('*').order('at',{ascending:false}).limit(300);
+  if (!r.error && state.user) { state.audit = r.data || []; if (ui.view === 'activity') renderBody(); }
+}
+function loadAll(o){
+  if (!state.user) return Promise.resolve();
+  if (loadingP) return loadingP;
+  loadingP = loadAllInner(o || {}).then(function(){ loadingP = null; }, function(){ loadingP = null; });
+  return loadingP;
+}
+async function loadAllInner(o){
+  try {
+    var res = await Promise.all([
+      sb.from('leads').select('*').order('created_at',{ascending:false}).limit(2000),
+      sb.from('properties').select('*').limit(1000),
+      sb.from('site_visits').select('*').order('visit_at',{ascending:false}).limit(2000),
+      sb.from('call_logs').select('id,lead_id,phone,direction,duration_secs,outcome,summary,elevenlabs_conversation_id,created_at').order('created_at',{ascending:false}).limit(500),
+      sb.from('audit_log').select('*').order('at',{ascending:false}).limit(300)
+    ]);
+    if (!state.user) return;
+    var bad = res.filter(function(r){ return r.error; })[0];
+    if (bad) { if (isAuthErr(bad.error)) { doLogout('Session expire ho gaya. Dobara login karo.'); return; } state.err = friendly(bad.error); renderBody(); return; }
+    state.leads = res[0].data || []; state.properties = res[1].data || []; state.visits = res[2].data || []; state.calls = res[3].data || []; state.audit = res[4].data || [];
+    state.err = null; state.loadedAt = new Date();
+    if (o.silent && (ui.view === 'settings' || !canSilentRender())) { updateNav(); return; }
+    renderBody(); updateNav();
+  } catch (x) { state.err = (x && x.message) || 'Network error'; if (!o.silent) renderBody(); }
+}
+function canSilentRender(){
+  if (document.querySelector('dialog[open]')) return false;
+  var a = document.activeElement; if (a && a.closest && a.closest('#vbody') && /^(SELECT|INPUT|TEXTAREA)$/.test(a.tagName)) return false;
+  return true;
+}
+function upsertLocal(arr, row){ var i = arr.findIndex(function(x){ return x.id === row.id; }); if (i >= 0) arr[i] = row; else arr.unshift(row); }
+async function patchRow(table, arr, id, patch, okMsg){
+  var r = await sb.from(table).update(patch).eq('id', id).select().single();
+  if (r.error) { handleErr(r.error, 'Update nahi hua'); renderBody(); return null; }
+  upsertLocal(arr, r.data); renderBody(); updateNav(); if (okMsg) toast(okMsg, 'ok'); loadAudit(); return r.data;
+}
+async function deleteRow(table, id, o){
+  var ok = await confirmWithPassword({title:o.title, message:o.message, confirmLabel:'Haan, delete karo', danger:true}); if (!ok) return false;
+  var r = await sb.from(table).delete().eq('id', id).select('id');
+  if (r.error) { handleErr(r.error, 'Delete nahi hua'); return false; }
+  if (!r.data || !r.data.length) { toast('Delete nahi hua (row nahi mila ya permission nahi).', 'bad'); return false; }
+  var key = {leads:'leads', properties:'properties', site_visits:'visits'}[table];
+  state[key] = state[key].filter(function(x){ return x.id !== id; });
+  if (table === 'leads') { state.visits = state.visits.filter(function(v){ return v.lead_id !== id; }); state.calls.forEach(function(c){ if (c.lead_id === id) c.lead_id = null; }); }
+  if (table === 'properties') state.visits.forEach(function(v){ if (v.property_id === id) v.property_id = null; });
+  renderBody(); updateNav(); loadAudit(); toast('Delete ho gaya.', 'ok'); return true;
+}
+
+/* ================= timers: idle + polling ================= */
+var lastAct = Date.now(), warned = false, tIdle = null, tPoll = null;
+function bump(){ if (!state.user) return; lastAct = Date.now(); if (warned) { warned = false; $('#idle').hidden = true; } }
+['pointerdown','keydown','touchstart','scroll','mousemove'].forEach(function(ev){ window.addEventListener(ev, bump, {passive:true, capture:true}); });
+function idleTick(){
+  if (!state.user) return; var idle = Date.now() - lastAct;
+  if (idle >= IDLE_LIMIT_MS) { doLogout('Kaafi der se idle tha, isliye auto-logout ho gaya.'); return; }
+  if (idle >= IDLE_WARN_MS) { warned = true; var b = $('#idle'); b.hidden = false; b.textContent = Math.max(1, Math.ceil((IDLE_LIMIT_MS - idle)/1000)) + ' second me auto-logout. Rukne ke liye screen touch karo.'; }
+}
+function startTimers(){ stopTimers(); lastAct = Date.now(); warned = false; tIdle = setInterval(idleTick, 1000); tPoll = setInterval(function(){ if (document.visibilityState === 'visible' && state.user) loadAll({silent:true}); }, POLL_MS); }
+function stopTimers(){ clearInterval(tIdle); clearInterval(tPoll); tIdle = tPoll = null; }
+document.addEventListener('visibilitychange', function(){ if (document.visibilityState === 'visible') idleTick(); });
+sb.auth.onAuthStateChange(function(ev){ if (ev === 'SIGNED_OUT' && state.user) { teardown(); showLogin('Session khatam ho gaya. Dobara login karo.'); } });
+
+/* ================= views ================= */
+var VIEWS = {};
+
+/* ---- overview ---- */
+VIEWS.overview = {
+  title:'Overview',
+  sub:function(){ var d = new Date().toLocaleDateString('en-IN',{timeZone:IST,weekday:'long',day:'numeric',month:'long',year:'numeric'}); return 'Namaste! ' + d + (state.loadedAt ? ' · last sync ' + state.loadedAt.toLocaleTimeString('en-IN',{timeZone:IST,hour:'numeric',minute:'2-digit',hour12:true}) : ''); },
+  actions:function(){ return '<button class="btn" data-action="refresh">'+ic('refresh',16)+' Refresh</button>'; },
+  body:function(){
+    var now = Date.now(), L = state.leads, V = state.visits, C = state.calls, P = state.properties;
+    if (!state.loadedAt) return '<div class="sk"></div><div class="sk"></div><div class="sk"></div>';
+    var newLeads = L.filter(function(l){ return l.status === 'new'; }).length;
+    var hot = L.filter(function(l){ return l.status === 'interested' || l.status === 'visit_booked'; }).length;
+    var up = V.filter(function(v){ return v.status === 'scheduled' && new Date(v.visit_at) >= now; }).sort(function(a,b){ return new Date(a.visit_at) - new Date(b.visit_at); });
+    var stale = V.filter(function(v){ return v.status === 'scheduled' && new Date(v.visit_at) < now; });
+    var week = C.filter(function(c){ return now - new Date(c.created_at) < 7*864e5; });
+    var avg = week.length ? Math.round(week.reduce(function(a,c){ return a + (c.duration_secs || 0); }, 0)/week.length) : 0;
+    var avail = P.filter(function(p){ return p.status === 'available'; }).length, sold = P.filter(function(p){ return p.status === 'sold'; }).length;
+    var stats = [
+      ['Total leads', L.length, newLeads + ' naye'],
+      ['Hot leads', hot, 'interested + visit booked'],
+      ['Aane wale visits', up.length, up[0] ? 'Next: ' + fmtDateTime(up[0].visit_at) : 'Koi visit scheduled nahi'],
+      ['Calls · 7 din', week.length, week.length ? 'Avg ' + fmtDur(avg) + ' min' : 'Koi call nahi'],
+      ['Properties live', avail, P.length + ' total · ' + sold + ' sold']
+    ].map(function(s){ return '<div class="stat"><div class="k">'+esc(s[0])+'</div><div class="v">'+esc(s[1])+'</div><div class="s">'+esc(s[2])+'</div></div>'; }).join('');
+    var days = []; for (var i = 13; i >= 0; i--) days.push(istKey(new Date(now - i*864e5)));
+    var counts = {}; days.forEach(function(d){ counts[d] = 0; });
+    C.forEach(function(c){ var k = istKey(new Date(c.created_at)); if (k in counts) counts[k]++; });
+    var max = Math.max.apply(null, [1].concat(days.map(function(d){ return counts[d]; })));
+    var bars = days.map(function(d){ var n = counts[d]; return '<div class="bar" title="'+d+': '+n+' calls"><span class="bv">'+(n || '')+'</span><i class="'+(n ? '' : 'z')+'" style="height:'+(n ? Math.max(6, Math.round(n/max*100)) : 3)+'px"></i><span class="bl">'+d.slice(8)+'</span></div>'; }).join('');
+    var order = ['new','contacted','interested','visit_booked','not_interested','do_not_call'];
+    var fun = order.map(function(k){ var n = L.filter(function(l){ return l.status === k; }).length; return '<div class="fun-r"><span>'+esc(LEAD_STATUS[k][0])+'</span><span class="fun-t"><i style="width:'+(L.length ? Math.round(n/L.length*100) : 0)+'%"></i></span><span class="n">'+n+'</span></div>'; }).join('');
+    var upList = up.slice(0,5).map(function(v){ var l = leadById(v.lead_id), p = propById(v.property_id);
+      return '<div class="item"><div class="c0"><div class="when-d">'+esc(fmtDay(v.visit_at))+'</div><div class="when-t mono">'+esc(fmtTime(v.visit_at))+'</div></div><div class="c1"><div class="t">'+esc(l ? (l.name || 'Unknown') : 'Deleted lead')+'</div><div class="m">'+esc(p ? p.title : 'Property tay nahi')+'</div></div></div>'; }).join('') || '<div class="empty"><b>Koi visit nahi</b>Agent ne abhi tak koi aane wala visit book nahi kiya.</div>';
+    var rc = C.slice(0,5).map(function(c){ var l = leadById(c.lead_id);
+      return '<div class="item click" data-action="call-open" data-id="'+esc(c.id)+'"><div class="c1"><div class="t">'+esc(l ? (l.name || 'Unknown caller') : fmtPhone(c.phone))+'</div><div class="m">'+esc(rel(c.created_at))+' · '+fmtDur(c.duration_secs)+'</div></div><div class="c3">'+chip(OUTCOME, c.outcome)+'</div></div>'; }).join('') || '<div class="empty"><b>Abhi koi call nahi</b>Pehli call aate hi yahan dikhegi.</div>';
+    return (stale.length ? '<div class="alert warn">'+stale.length+' visit ka time nikal gaya par status abhi bhi "Scheduled" hai. Completed ya No-show mark kar do.<button class="btn sm" data-action="goto-stale">Update karo</button></div>' : '')+
+      '<div class="stats">'+stats+'</div>'+
+      '<div class="cols2"><div class="card"><div class="card-h"><h3>Calls · pichhle 14 din</h3><span class="faint mono" style="font-size:12px">IST</span></div><div class="card-b"><div class="bars">'+bars+'</div></div></div>'+
+      '<div class="card"><div class="card-h"><h3>Lead funnel</h3></div><div class="card-b"><div class="fun">'+fun+'</div></div></div></div>'+
+      '<div class="cols2"><div class="card"><div class="card-h"><h3>Aane wale visits</h3><button class="btn ghost sm" data-action="go" data-view="visits">Sab dekho</button></div><div class="card-b" style="padding:6px 0 0">'+upList+'</div></div>'+
+      '<div class="card"><div class="card-h"><h3>Recent calls</h3><button class="btn ghost sm" data-action="go" data-view="calls">Sab dekho</button></div><div class="card-b" style="padding:6px 0 0">'+rc+'</div></div></div>';
+  }
+};
+
+/* ---- leads ---- */
+function leadsFiltered(){
+  var f = ui.leads, q = f.q.trim().toLowerCase();
+  return state.leads.filter(function(l){
+    if (f.status && l.status !== f.status) return false; if (f.source && l.source !== f.source) return false;
+    if (!q) return true; return [l.name, l.phone, l.preferred_locality, l.notes].join(' ').toLowerCase().indexOf(q) >= 0;
+  });
+}
+VIEWS.leads = {
+  title:'Leads',
+  sub:function(){ return leadsFiltered().length + ' of ' + state.leads.length + ' leads'; },
+  actions:function(){ return '<button class="btn primary" data-action="lead-new">'+ic('plus',16)+' Naya lead</button>'; },
+  toolbar:function(){ return '<div class="search">'+ic('search',16)+'<input class="inp" type="search" placeholder="Naam, phone ya locality" data-filter="leads.q" value="'+esc(ui.leads.q)+'" aria-label="Search leads"></div>'+
+    '<select class="sel" data-filter="leads.status" aria-label="Status filter">'+opts(LEAD_STATUS, ui.leads.status, 'Sab status')+'</select>'+
+    '<select class="sel" data-filter="leads.source" aria-label="Source filter">'+opts(SOURCES, ui.leads.source, 'Sab source')+'</select>'; },
+  body:function(){
+    if (!state.loadedAt) return '<div class="sk"></div><div class="sk"></div>';
+    var rows = leadsFiltered(); if (!rows.length) return '<div class="list"><div class="empty"><b>Koi lead nahi mila</b>Filter badlo ya naya lead add karo.</div></div>';
+    return '<div class="list">' + rows.map(function(l){
+      var interest = [fmtBudget(l.budget_min_lakh, l.budget_max_lakh), l.preferred_bhk ? l.preferred_bhk + ' BHK' : '', l.preferred_locality].filter(Boolean).join(' · ');
+      return '<div class="item"><div class="c1"><button class="linklike" data-action="lead-open" data-id="'+esc(l.id)+'">'+esc(l.name || 'Unknown caller')+'</button><div class="m mono">'+esc(fmtPhone(l.phone))+' <span class="chip muted" style="margin-left:6px">'+esc(SOURCES[l.source] || l.source)+'</span></div></div>'+
+        '<div class="c2"><div class="m">'+esc(interest || 'Requirement abhi pata nahi')+'</div><div class="m faint">'+esc(rel(l.created_at))+'</div></div>'+
+        '<div class="c3">'+statusSel(LEAD_STATUS, l.status, 'lead-status', l.id)+
+        '<label class="switch" title="Call consent (outbound ke liye)"><input type="checkbox" data-change="lead-consent" data-id="'+esc(l.id)+'"'+(l.consent_to_call ? ' checked' : '')+' aria-label="Call consent"><span></span></label>'+
+        callBtn(l)+'<button class="btn sm" data-action="lead-open" data-id="'+esc(l.id)+'">Details</button></div></div>';
+    }).join('') + '</div><p class="fine" style="margin-top:10px">Toggle = outbound call ke liye consent. Call button tabhi chalega jab consent on ho aur number sahi ho. "Do not call" status ke saath consent on nahi ho sakta.</p>';
+  }
+};
+/* ---- outbound call (abhi dry-run: asli call nahi jaati) ---- */
+function callBlock(l){
+  if (!l) return 'Lead nahi mila.';
+  if (l.status === 'do_not_call') return 'Yeh lead "Do not call" hai.';
+  if (l.status === 'not_interested') return 'Lead "Not interested" hai.';
+  if (!l.consent_to_call) return 'Call consent off hai. Pehle consent on karo.';
+  if (!normPhone(l.phone)) return 'Phone number sahi nahi hai.';
+  return '';
+}
+function callBtn(l, extra){
+  var blk = callBlock(l);
+  return '<button type="button" class="btn sm'+(extra || '')+'" data-action="lead-call" data-id="'+esc(l.id)+'"'+(blk ? ' disabled title="'+esc(blk)+'"' : '')+'>'+ic('phone',14)+' Call</button>';
+}
+var CALL_ERR = {
+  no_consent_to_call:'Is lead ki call consent off hai.',
+  do_not_call:'Yeh lead "Do not call" hai. Call nahi ho sakti.',
+  not_interested:'Lead "Not interested" hai. Call nahi ho sakti.',
+  invalid_phone:'Lead ka phone number sahi nahi hai.',
+  lead_not_found_or_not_allowed:'Lead nahi mila ya permission nahi hai. Logout karke dobara login karo.',
+  invalid_request:'Request sahi nahi thi. Page reload karke dobara try karo.'
+};
+var calling = false;
+function callLead(id){
+  var l = leadById(id); if (!l) return;
+  var blk = callBlock(l); if (blk) { toast(blk, 'bad'); return; }
+  var d = openDialog('<div class="dlg-in">'+dlgHead('Call karni hai?')+
+    '<div class="dlg-b"><p><b>'+esc(l.name || 'Unknown caller')+'</b><br><span class="mono">'+esc(fmtPhone(l.phone))+'</span></p>'+
+    '<p>Riya (AI agent) is lead ko Hindi me call karegi.</p>'+
+    '<p class="fine">Abhi demo mode hai: asli call nahi jayegi. Bas consent aur do-not-call ke checks chalenge aur dikhega ki call kaise lagti.</p>'+
+    '<p class="form-err" role="alert" hidden></p></div>'+
+    '<footer class="dlg-f"><button type="button" class="btn ghost" data-action="close-dlg">Cancel</button><button type="button" class="btn primary" data-go>'+ic('phone',16)+' Call karo</button></footer></div>', {backdrop:true});
+  var go = d.querySelector('[data-go]'), box = d.querySelector('.form-err');
+  go.addEventListener('click', async function(){
+    if (calling) return; calling = true; go.disabled = true; box.hidden = true;
+    var out = await requestCall(l); calling = false;
+    if (out.logout) { return; }
+    if (out.err) { go.disabled = false; box.textContent = out.err; box.hidden = false; return; }
+    d.close(); callResult(l, out.body);
+  });
+}
+async function requestCall(l){
+  var s = await sb.auth.getSession(), tok = s.data && s.data.session && s.data.session.access_token;
+  if (!tok) { doLogout('Session expire ho gaya. Dobara login karo.'); return {logout:true}; }
+  var ctl = new AbortController(), timer = setTimeout(function(){ ctl.abort(); }, 20000), res, body = null;
+  try {
+    res = await fetch(OUTBOUND_URL, {method:'POST', headers:{'Content-Type':'application/json', 'Authorization':'Bearer ' + tok}, body:JSON.stringify({lead_id:l.id}), signal:ctl.signal, credentials:'omit', referrerPolicy:'no-referrer'});
+    try { body = await res.json(); } catch(e){ body = null; }
+  } catch(e) {
+    return {err: e && e.name === 'AbortError' ? 'Server ne der tak jawab nahi diya. Thodi der baad dobara try karo.' : 'Call server tak nahi pahunch paye. Internet check karke dobara try karo.'};
+  } finally { clearTimeout(timer); }
+  if (res.ok && body && body.success) return {body:body};
+  return {err: (body && CALL_ERR[body.error]) || 'Call nahi lagi (error ' + res.status + '). Dobara try karo.'};
+}
+function callResult(l, b){
+  var w = (b && b.would_call) || {}, dry = !b || b.dry_run !== false;
+  openDialog('<div class="dlg-in">'+dlgHead(dry ? 'Demo: call nahi gayi' : 'Call lag rahi hai')+
+    '<div class="dlg-b"><p>'+(dry ? 'Sab checks pass ho gaye. Real number jodne ke baad yahi button asli call lagayega.' : 'Riya ne call shuru kar di hai. Result thodi der me Call logs me dikhega.')+'</p>'+
+    '<div class="mini"><div><span>Kisko</span><span class="mono">'+esc(w.to_number || fmtPhone(l.phone))+'</span></div><div><span>Naam</span><span>'+esc(l.name || 'Unknown caller')+'</span></div><div><span>Agent</span><span>Riya · XYZ Realty</span></div></div>'+
+    (w.first_message ? '<div class="sec-t">Riya ki pehli line</div><p>'+esc(w.first_message)+'</p>' : '')+'</div>'+
+    '<footer class="dlg-f"><button type="button" class="btn primary" data-action="close-dlg">Theek hai</button></footer></div>', {backdrop:true});
+}
+
+function leadModal(id){
+  var l = id ? leadById(id) : null, isNew = !l; if (id && !l) return;
+  var hist = '';
+  if (!isNew) {
+    var lv = state.visits.filter(function(v){ return v.lead_id === l.id; }).sort(function(a,b){ return new Date(b.visit_at) - new Date(a.visit_at); });
+    var lc = state.calls.filter(function(c){ return c.lead_id === l.id; }).slice(0,5);
+    hist = '<div><div class="sec-t">Site visits ('+lv.length+')</div><div class="mini">'+(lv.map(function(v){ var p = propById(v.property_id); return '<div><span>'+esc(fmtDateTime(v.visit_at))+' · '+esc(p ? p.title : 'Property tay nahi')+'</span>'+chip(VISIT_STATUS, v.status)+'</div>'; }).join('') || '<div class="muted">Koi visit nahi</div>')+'</div>'+
+      '<div class="sec-t">Recent calls ('+lc.length+')</div><div class="mini">'+(lc.map(function(c){ return '<div><button type="button" class="linklike" style="font-weight:600;font-size:13.5px" data-action="call-open" data-id="'+esc(c.id)+'">'+esc(rel(c.created_at))+' · '+fmtDur(c.duration_secs)+'</button>'+chip(OUTCOME, c.outcome)+'</div>'; }).join('') || '<div class="muted">Koi call nahi</div>')+'</div></div>';
+  }
+  var d = openDialog('<form class="dlg-in" autocomplete="off" novalidate>'+dlgHead(isNew ? 'Naya lead' : (l.name || 'Unknown caller'))+
+    '<div class="dlg-b"><div class="grid2">'+
+      fld('Name','<input class="inp" name="name" maxlength="80" value="'+esc(l && l.name)+'">')+
+      (isNew ? fld('Phone','<input class="inp mono" name="phone" inputmode="tel" placeholder="98XXXXXXXX" required>', {hint:'10 digit mobile. +91 apne aap lag jayega.'}) : fld('Phone','<input class="inp mono" value="'+esc(fmtPhone(l.phone))+'" readonly>', {hint:'Phone number lock hai.'}))+
+      fld('Status','<select class="sel" name="status" style="width:100%;min-height:42px;font-size:15px;background:var(--bg);color:var(--ink);border-color:var(--line-2)">'+opts(LEAD_STATUS, l ? l.status : 'new')+'</select>')+
+      (isNew ? fld('Source','<select class="sel" name="source" style="width:100%;min-height:42px;font-size:15px;background:var(--bg);color:var(--ink);border-color:var(--line-2)">'+opts(SOURCES,'manual')+'</select>') : fld('Source','<input class="inp" value="'+esc(SOURCES[l.source] || l.source)+'" readonly>'))+
+      fld('Budget min (lakh)','<input class="inp" type="number" step="any" min="0" inputmode="decimal" name="budget_min_lakh" value="'+esc(l && l.budget_min_lakh)+'">')+
+      fld('Budget max (lakh)','<input class="inp" type="number" step="any" min="0" inputmode="decimal" name="budget_max_lakh" value="'+esc(l && l.budget_max_lakh)+'">')+
+      fld('Preferred locality','<input class="inp" name="preferred_locality" maxlength="80" placeholder="Sector 86" value="'+esc(l && l.preferred_locality)+'">')+
+      fld('Preferred BHK','<input class="inp" type="number" min="0" max="10" step="1" inputmode="numeric" name="preferred_bhk" value="'+esc(l && l.preferred_bhk)+'">')+
+      '<label class="check span2"><input type="checkbox" name="consent_to_call"'+(l && l.consent_to_call ? ' checked' : '')+'> Is lead ko outbound call karne ki consent hai</label>'+
+      fld('Notes','<textarea class="inp" name="notes" maxlength="1000" rows="3">'+esc(l && l.notes)+'</textarea>', {span:true})+
+    '</div>'+hist+'<p class="form-err" role="alert" hidden></p></div>'+
+    '<footer class="dlg-f">'+(isNew ? '' : '<button type="button" class="btn ghost danger-t sp" data-action="lead-delete" data-id="'+esc(l.id)+'">Delete</button>')+
+      (isNew ? '' : callBtn(l)) + '<button type="button" class="btn ghost" data-action="close-dlg">Cancel</button><button type="submit" class="btn primary">'+(isNew ? 'Lead add karo' : 'Save')+'</button></footer></form>', {wide:true});
+  var form = d.querySelector('form');
+  form.addEventListener('submit', async function(e){
+    e.preventDefault(); formErr(form,''); var fe = form.elements;
+    var p = {name:fe.name.value.trim() || null, status:fe.status.value, budget_min_lakh:numOrNull(fe.budget_min_lakh.value), budget_max_lakh:numOrNull(fe.budget_max_lakh.value),
+      preferred_locality:fe.preferred_locality.value.trim() || null, preferred_bhk:numOrNull(fe.preferred_bhk.value), consent_to_call:fe.consent_to_call.checked, notes:fe.notes.value.trim() || null};
+    if (p.budget_min_lakh != null && p.budget_max_lakh != null && p.budget_min_lakh > p.budget_max_lakh) return formErr(form, 'Budget min, max se bada nahi ho sakta.');
+    if (p.status === 'do_not_call' && p.consent_to_call) return formErr(form, '"Do not call" status ke saath call consent on nahi ho sakta. Ek hata do.');
+    if (p.preferred_bhk != null) p.preferred_bhk = Math.round(p.preferred_bhk);
+    var res;
+    setBusy(form, true);
+    if (isNew) {
+      var ph = normPhone(fe.phone.value); if (!ph) { setBusy(form,false); return formErr(form, 'Sahi 10 digit Indian mobile number daalo (6-9 se shuru).'); }
+      p.phone = ph; p.source = fe.source.value;
+      res = await sb.from('leads').insert(p).select().single();
+    } else res = await sb.from('leads').update(p).eq('id', l.id).select().single();
+    setBusy(form, false);
+    if (res.error) { if (isAuthErr(res.error)) return handleErr(res.error); return formErr(form, friendly(res.error)); }
+    upsertLocal(state.leads, res.data); d.close(); renderBody(); updateNav(); loadAudit(); toast(isNew ? 'Lead add ho gaya.' : 'Lead save ho gaya.', 'ok');
+  });
+}
+
+/* ---- properties ---- */
+function propsFiltered(){
+  var f = ui.properties, q = f.q.trim().toLowerCase(), ord = {available:0, hold:1, sold:2};
+  return state.properties.filter(function(p){
+    if (f.type && p.property_type !== f.type) return false; if (f.status && p.status !== f.status) return false;
+    if (!q) return true; return [p.title, p.locality, p.city, (p.amenities || []).join(' '), p.description].join(' ').toLowerCase().indexOf(q) >= 0;
+  }).sort(function(a,b){ return (ord[a.status] - ord[b.status]) || a.title.localeCompare(b.title); });
+}
+VIEWS.properties = {
+  title:'Properties',
+  sub:function(){ return propsFiltered().length + ' of ' + state.properties.length + ' properties · voice agent sirf "Available" dikhata hai'; },
+  actions:function(){ return '<button class="btn primary" data-action="prop-new">'+ic('plus',16)+' Nayi property</button>'; },
+  toolbar:function(){ return '<div class="search">'+ic('search',16)+'<input class="inp" type="search" placeholder="Title, sector, amenity" data-filter="properties.q" value="'+esc(ui.properties.q)+'" aria-label="Search properties"></div>'+
+    '<select class="sel" data-filter="properties.type" aria-label="Type filter">'+opts(PTYPE, ui.properties.type, 'Sab type')+'</select>'+
+    '<select class="sel" data-filter="properties.status" aria-label="Status filter">'+opts(PROP_STATUS, ui.properties.status, 'Sab status')+'</select>'; },
+  body:function(){
+    if (!state.loadedAt) return '<div class="sk"></div><div class="sk"></div>';
+    var rows = propsFiltered(); if (!rows.length) return '<div class="list"><div class="empty"><b>Koi property nahi mili</b>Filter badlo ya nayi property add karo.</div></div>';
+    return '<div class="pgrid">' + rows.map(function(p){
+      var psf = (p.area_sqft && p.price_lakh) ? '₹' + Math.round(p.price_lakh*100000/p.area_sqft).toLocaleString('en-IN') + '/sq ft' : '';
+      var meta = [p.bhk ? p.bhk + ' BHK' : '', p.area_sqft ? p.area_sqft.toLocaleString('en-IN') + ' sq ft' : '', p.possession].filter(Boolean).join(' · ');
+      return '<article class="pcard '+esc(p.status)+'"><div class="pc-top"><span class="chip accent">'+esc(PTYPE[p.property_type] || p.property_type)+'</span>'+statusSel(PROP_STATUS, p.status, 'prop-status', p.id)+'</div>'+
+        '<h3>'+esc(p.title)+'</h3><div class="pc-meta">'+esc(p.locality)+', '+esc(p.city)+'</div>'+
+        '<div class="pc-price">'+esc(fmtPrice(p.price_lakh))+(psf ? '<small>'+esc(psf)+'</small>' : '')+'</div>'+
+        (meta ? '<div class="pc-meta">'+esc(meta)+'</div>' : '')+
+        ((p.amenities || []).length ? '<div class="pc-chips">'+p.amenities.slice(0,5).map(function(a){ return '<span class="chip">'+esc(a)+'</span>'; }).join('')+(p.amenities.length > 5 ? '<span class="chip muted">+'+(p.amenities.length-5)+'</span>' : '')+'</div>' : '')+
+        '<div class="pc-foot"><button class="btn sm" data-action="prop-open" data-id="'+esc(p.id)+'">Edit</button></div></article>';
+    }).join('') + '</div>';
+  }
+};
+function propModal(id){
+  var p = id ? propById(id) : null, isNew = !p; if (id && !p) return;
+  var S = 'width:100%;min-height:42px;font-size:15px;background:var(--bg);color:var(--ink);border-color:var(--line-2)';
+  var d = openDialog('<form class="dlg-in" autocomplete="off" novalidate>'+dlgHead(isNew ? 'Nayi property' : 'Property edit')+
+    '<div class="dlg-b"><div class="grid2">'+
+      fld('Title','<input class="inp" name="title" maxlength="120" required placeholder="XYZ Heights - 2 BHK" value="'+esc(p && p.title)+'">', {span:true})+
+      fld('Type','<select class="sel" name="property_type" style="'+S+'">'+opts(PTYPE, p ? p.property_type : 'flat')+'</select>')+
+      fld('Status','<select class="sel" name="status" style="'+S+'">'+opts(PROP_STATUS, p ? p.status : 'available')+'</select>')+
+      fld('Locality / Sector','<input class="inp" name="locality" maxlength="80" required placeholder="Sector 86" value="'+esc(p && p.locality)+'">')+
+      fld('City','<input class="inp" name="city" maxlength="60" required value="'+esc(p ? p.city : 'Faridabad')+'">')+
+      fld('Price (lakh me)','<input class="inp" type="number" step="any" min="0" inputmode="decimal" name="price_lakh" required value="'+esc(p && p.price_lakh)+'">', {hint:'1 crore = 100 lakh. Jaise 42.5'})+
+      fld('Area (sq ft)','<input class="inp" type="number" step="1" min="0" inputmode="numeric" name="area_sqft" value="'+esc(p && p.area_sqft)+'">')+
+      fld('BHK','<input class="inp" type="number" step="1" min="0" max="10" inputmode="numeric" name="bhk" value="'+esc(p && p.bhk)+'">')+
+      fld('Possession','<input class="inp" name="possession" maxlength="60" placeholder="Ready to move" value="'+esc(p && p.possession)+'">')+
+      fld('Amenities','<input class="inp" name="amenities" maxlength="300" placeholder="Lift, Parking, Power backup" value="'+esc(p && (p.amenities || []).join(', '))+'">', {span:true, hint:'Comma se alag karo'})+
+      fld('Description','<textarea class="inp" name="description" maxlength="1500" rows="3">'+esc(p && p.description)+'</textarea>', {span:true})+
+    '</div><p class="form-err" role="alert" hidden></p></div>'+
+    '<footer class="dlg-f">'+(isNew ? '' : '<button type="button" class="btn ghost danger-t sp" data-action="prop-delete" data-id="'+esc(p.id)+'">Delete</button>')+
+      '<button type="button" class="btn ghost" data-action="close-dlg">Cancel</button><button type="submit" class="btn primary">'+(isNew ? 'Property add karo' : 'Save')+'</button></footer></form>', {wide:true});
+  var form = d.querySelector('form');
+  form.addEventListener('submit', async function(e){
+    e.preventDefault(); formErr(form,''); var fe = form.elements;
+    var pl = numOrNull(fe.price_lakh.value);
+    var pay = {title:fe.title.value.trim(), property_type:fe.property_type.value, status:fe.status.value, locality:fe.locality.value.trim(), city:fe.city.value.trim(),
+      price_lakh:pl, area_sqft:numOrNull(fe.area_sqft.value), bhk:numOrNull(fe.bhk.value), possession:fe.possession.value.trim() || null,
+      amenities:fe.amenities.value.split(',').map(function(s){ return s.trim(); }).filter(Boolean), description:fe.description.value.trim() || null};
+    if (!pay.title || !pay.locality || !pay.city) return formErr(form, 'Title, locality aur city zaroori hain.');
+    if (pl == null || pl <= 0) return formErr(form, 'Sahi price (lakh me) daalo.');
+    if (pay.area_sqft != null) pay.area_sqft = Math.round(pay.area_sqft); if (pay.bhk != null) pay.bhk = Math.round(pay.bhk);
+    setBusy(form, true);
+    var res = isNew ? await sb.from('properties').insert(pay).select().single() : await sb.from('properties').update(pay).eq('id', p.id).select().single();
+    setBusy(form, false);
+    if (res.error) { if (isAuthErr(res.error)) return handleErr(res.error); return formErr(form, friendly(res.error)); }
+    upsertLocal(state.properties, res.data); d.close(); renderBody(); loadAudit(); toast(isNew ? 'Property add ho gayi.' : 'Property save ho gayi.', 'ok');
+  });
+}
+
+/* ---- visits ---- */
+function visitsFiltered(){
+  var f = ui.visits, q = f.q.trim().toLowerCase(), now = Date.now();
+  var rows = state.visits.filter(function(v){
+    var t = new Date(v.visit_at).getTime();
+    if (f.range === 'upcoming' && !(v.status === 'scheduled' && t >= now)) return false;
+    if (f.range === 'stale' && !(v.status === 'scheduled' && t < now)) return false;
+    if (f.range === 'past' && !(t < now)) return false;
+    if (f.status && v.status !== f.status) return false;
+    if (!q) return true; var l = leadById(v.lead_id), p = propById(v.property_id);
+    return [l && l.name, l && l.phone, p && p.title, p && p.locality, v.notes].join(' ').toLowerCase().indexOf(q) >= 0;
+  });
+  rows.sort(function(a,b){ var d = new Date(a.visit_at) - new Date(b.visit_at); return (f.range === 'upcoming' || f.range === 'stale') ? d : -d; });
+  return rows;
+}
+VIEWS.visits = {
+  title:'Site visits',
+  sub:function(){ return visitsFiltered().length + ' visits · sab time IST me'; },
+  actions:function(){ return '<button class="btn primary" data-action="visit-new">'+ic('plus',16)+' Visit book karo</button>'; },
+  toolbar:function(){
+    var now = Date.now(), nStale = state.visits.filter(function(v){ return v.status === 'scheduled' && new Date(v.visit_at) < now; }).length;
+    var segs = [['upcoming','Upcoming'],['stale','Update chahiye' + (nStale ? ' ('+nStale+')' : '')],['past','Past'],['all','Sab']];
+    return '<div class="seg" role="group" aria-label="Range">'+segs.map(function(s){ return '<button type="button" data-action="set-filter" data-path="visits.range" data-value="'+s[0]+'" aria-pressed="'+(ui.visits.range === s[0])+'">'+esc(s[1])+'</button>'; }).join('')+'</div>'+
+      '<div class="search">'+ic('search',16)+'<input class="inp" type="search" placeholder="Naam, phone, property" data-filter="visits.q" value="'+esc(ui.visits.q)+'" aria-label="Search visits"></div>'+
+      '<select class="sel" data-filter="visits.status" aria-label="Status filter">'+opts(VISIT_STATUS, ui.visits.status, 'Sab status')+'</select>';
+  },
+  body:function(){
+    if (!state.loadedAt) return '<div class="sk"></div><div class="sk"></div>';
+    var rows = visitsFiltered(); if (!rows.length) return '<div class="list"><div class="empty"><b>Is filter me koi visit nahi</b>Voice agent ya aap jab visit book karoge to yahan dikhegi.</div></div>';
+    return '<div class="list">' + rows.map(function(v){ var l = leadById(v.lead_id), p = propById(v.property_id);
+      return '<div class="item"><div class="c0"><div class="when-d">'+esc(fmtDay(v.visit_at))+'</div><div class="when-t mono">'+esc(fmtTime(v.visit_at))+'</div></div>'+
+        '<div class="c1"><div class="t">'+esc(l ? (l.name || 'Unknown caller') : 'Deleted lead')+'</div><div class="m mono">'+esc(l ? fmtPhone(l.phone) : '')+'</div></div>'+
+        '<div class="c2"><div class="t">'+esc(p ? p.title : 'Property tay nahi')+'</div><div class="m">'+esc(p ? p.locality : '')+(v.notes ? ' · '+esc(v.notes) : '')+'</div></div>'+
+        '<div class="c3">'+statusSel(VISIT_STATUS, v.status, 'visit-status', v.id)+'<button class="btn sm" data-action="visit-open" data-id="'+esc(v.id)+'">Edit</button></div></div>'; }).join('') + '</div>';
+  }
+};
+function visitModal(id){
+  var v = id ? state.visits.find(function(x){ return x.id === id; }) : null, isNew = !v; if (id && !v) return;
+  var S = 'width:100%;min-height:42px;font-size:15px;background:var(--bg);color:var(--ink);border-color:var(--line-2)';
+  var leadOpts = state.leads.slice().sort(function(a,b){ return (a.name || '~').localeCompare(b.name || '~'); }).map(function(l){ return '<option value="'+esc(l.id)+'"'+(v && v.lead_id === l.id ? ' selected' : '')+'>'+esc((l.name || 'Unknown') + ' · ' + fmtPhone(l.phone))+'</option>'; }).join('');
+  var propOpts = '<option value="">— Property tay nahi —</option>' + state.properties.filter(function(p){ return p.status !== 'sold' || (v && v.property_id === p.id); }).map(function(p){ return '<option value="'+esc(p.id)+'"'+(v && v.property_id === p.id ? ' selected' : '')+'>'+esc(p.title + ' · ' + p.locality)+'</option>'; }).join('');
+  var dt = v ? toISTInput(v.visit_at) : toISTInput(new Date(Date.now() + 864e5)).slice(0,10) + 'T11:00';
+  var d = openDialog('<form class="dlg-in" autocomplete="off" novalidate>'+dlgHead(isNew ? 'Visit book karo' : 'Visit edit')+
+    '<div class="dlg-b"><div class="grid2">'+
+      fld('Lead','<select class="sel" name="lead_id" required style="'+S+'"'+(isNew ? '' : ' disabled')+'>'+(isNew ? '<option value="">— Lead chuno —</option>' : '')+leadOpts+'</select>', {span:true})+
+      fld('Property','<select class="sel" name="property_id" style="'+S+'">'+propOpts+'</select>', {span:true})+
+      fld('Date & time (IST)','<input class="inp" type="datetime-local" name="visit_at" required value="'+esc(dt)+'">', {hint:'Voice agent 10:00–19:00 IST ke beech hi book karta hai.'})+
+      fld('Status','<select class="sel" name="status" style="'+S+'">'+opts(VISIT_STATUS, v ? v.status : 'scheduled')+'</select>')+
+      fld('Notes','<textarea class="inp" name="notes" maxlength="500" rows="3">'+esc(v && v.notes)+'</textarea>', {span:true})+
+    '</div><p class="form-err" role="alert" hidden></p></div>'+
+    '<footer class="dlg-f">'+(isNew ? '' : '<button type="button" class="btn ghost danger-t sp" data-action="visit-delete" data-id="'+esc(v.id)+'">Delete</button>')+
+      '<button type="button" class="btn ghost" data-action="close-dlg">Cancel</button><button type="submit" class="btn primary">'+(isNew ? 'Book karo' : 'Save')+'</button></footer></form>', {wide:true});
+  var form = d.querySelector('form');
+  form.addEventListener('submit', async function(e){
+    e.preventDefault(); formErr(form,''); var fe = form.elements;
+    var iso = fromISTInput(fe.visit_at.value); if (!iso) return formErr(form, 'Sahi date aur time daalo.');
+    var pay = {property_id:fe.property_id.value || null, visit_at:iso, status:fe.status.value, notes:fe.notes.value.trim() || null};
+    if (isNew) { if (!fe.lead_id.value) return formErr(form, 'Pehle lead chuno.'); pay.lead_id = fe.lead_id.value; }
+    setBusy(form, true);
+    var res = isNew ? await sb.from('site_visits').insert(pay).select().single() : await sb.from('site_visits').update(pay).eq('id', v.id).select().single();
+    setBusy(form, false);
+    if (res.error) { if (isAuthErr(res.error)) return handleErr(res.error); return formErr(form, friendly(res.error)); }
+    upsertLocal(state.visits, res.data); d.close(); renderBody(); updateNav(); loadAudit(); toast(isNew ? 'Visit book ho gayi.' : 'Visit save ho gayi.', 'ok');
+  });
+}
+
+/* ---- calls (read only) ---- */
+function callsFiltered(){
+  var f = ui.calls, q = f.q.trim().toLowerCase();
+  return state.calls.filter(function(c){
+    if (f.outcome && c.outcome !== f.outcome) return false; if (f.dir && c.direction !== f.dir) return false;
+    if (!q) return true; var l = leadById(c.lead_id); return [l && l.name, c.phone, l && l.phone, c.summary].join(' ').toLowerCase().indexOf(q) >= 0;
+  });
+}
+VIEWS.calls = {
+  title:'Call logs',
+  sub:function(){ return callsFiltered().length + ' of ' + state.calls.length + ' calls · read-only, koi edit/delete nahi kar sakta'; },
+  toolbar:function(){ return '<div class="search">'+ic('search',16)+'<input class="inp" type="search" placeholder="Naam, phone, summary" data-filter="calls.q" value="'+esc(ui.calls.q)+'" aria-label="Search calls"></div>'+
+    '<select class="sel" data-filter="calls.outcome" aria-label="Outcome filter">'+opts(OUTCOME, ui.calls.outcome, 'Sab outcome')+'</select>'+
+    '<select class="sel" data-filter="calls.dir" aria-label="Direction filter"><option value="">Inbound + Outbound</option><option value="inbound"'+(ui.calls.dir === 'inbound' ? ' selected' : '')+'>Inbound</option><option value="outbound"'+(ui.calls.dir === 'outbound' ? ' selected' : '')+'>Outbound</option></select>'; },
+  body:function(){
+    if (!state.loadedAt) return '<div class="sk"></div><div class="sk"></div>';
+    var rows = callsFiltered(); if (!rows.length) return '<div class="list"><div class="empty"><b>Koi call nahi mili</b>Jaise hi voice agent call karega ya receive karega, yahan aa jayegi.</div></div>';
+    return '<div class="list">' + rows.slice(0,200).map(function(c){ var l = leadById(c.lead_id);
+      return '<div class="item click" data-action="call-open" data-id="'+esc(c.id)+'"><div class="c1"><div class="t">'+esc(l ? (l.name || 'Unknown caller') : fmtPhone(c.phone))+'</div><div class="m mono">'+esc(l ? fmtPhone(l.phone) : '')+'</div><div class="m faint">'+esc(fmtDateTime(c.created_at))+' · '+esc(fmtDur(c.duration_secs))+' min</div></div>'+
+        '<div class="c2"><div class="m" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">'+esc(c.summary || 'Summary nahi hai')+'</div></div>'+
+        '<div class="c3"><span class="chip muted">'+ic(c.direction === 'outbound' ? 'outb' : 'inb', 12)+' '+(c.direction === 'outbound' ? 'Out' : 'In')+'</span>'+chip(OUTCOME, c.outcome)+'</div></div>'; }).join('') + '</div>' + (rows.length > 200 ? '<p class="fine" style="margin-top:10px">Pehli 200 calls dikh rahi hain. Search se filter karo.</p>' : '');
+  }
+};
+async function callModal(id){
+  var c = state.calls.find(function(x){ return x.id === id; }); if (!c) return; var l = leadById(c.lead_id);
+  var d = openDialog('<div class="dlg-in">'+dlgHead(l ? (l.name || 'Unknown caller') : fmtPhone(c.phone))+
+    '<div class="dlg-b"><div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><span class="chip muted">'+ic(c.direction === 'outbound' ? 'outb' : 'inb', 12)+' '+(c.direction === 'outbound' ? 'Outbound' : 'Inbound')+'</span>'+chip(OUTCOME, c.outcome)+'<span class="muted mono" style="font-size:13px">'+esc(fmtDateTime(c.created_at))+' · '+esc(fmtDur(c.duration_secs))+' min</span></div>'+
+    '<div><div class="sec-t" style="margin-top:4px">Summary</div><p>'+esc(c.summary || 'Summary nahi hai.')+'</p></div>'+
+    '<div><div class="sec-t" style="margin-top:4px">Transcript</div><div class="tx" id="txBox"><p class="muted" style="padding:10px 0">Load ho raha hai…</p></div></div>'+
+    '<p class="fine mono">ID: '+esc(c.elevenlabs_conversation_id || '—')+'</p></div>'+
+    '<footer class="dlg-f"><span class="fine sp">Call logs read-only hain.</span><button type="button" class="btn" data-action="close-dlg">Close</button></footer></div>', {wide:true, backdrop:true, noFocus:true});
+  var r = await sb.from('call_logs').select('transcript').eq('id', id).single();
+  var box = d.querySelector('#txBox'); if (!box || !d.isConnected) return;
+  if (r.error) { box.innerHTML = '<p class="muted" style="padding:10px 0">Transcript load nahi hua.</p>'; return; }
+  var t = (r.data && r.data.transcript) || ''; if (!t.trim()) { box.innerHTML = '<p class="muted" style="padding:10px 0">Transcript available nahi hai.</p>'; return; }
+  box.innerHTML = t.split(/\n+/).filter(Boolean).map(function(line){
+    var m = /^([^:\n]{1,24}):\s*([\s\S]*)$/.exec(line); if (!m) return '<div class="speaker"><b></b><span>'+esc(line)+'</span></div>';
+    var ai = /^(riya|agent|ai|assistant)$/i.test(m[1].trim());
+    return '<div class="speaker'+(ai ? ' ai' : '')+'"><b>'+esc(m[1])+'</b><span>'+esc(m[2])+'</span></div>';
+  }).join('');
+}
+
+/* ---- activity ---- */
+function fmtVal(v){ if (v == null) return '∅'; var s = typeof v === 'object' ? JSON.stringify(v) : String(v); return s.length > 90 ? s.slice(0,90) + '…' : s; }
+VIEWS.activity = {
+  title:'Activity log',
+  sub:function(){ return 'Kisne kya badla. Voice agent ke badlaav bhi yahin dikhte hain. Is log ko koi edit/delete nahi kar sakta.'; },
+  toolbar:function(){ return '<select class="sel" data-filter="activity.table" aria-label="Table filter">'+opts(TABLE_LABEL, ui.activity.table, 'Sab')+'</select>'; },
+  body:function(){
+    if (!state.loadedAt) return '<div class="sk"></div><div class="sk"></div>';
+    var rows = state.audit.filter(function(a){ return !ui.activity.table || a.table_name === ui.activity.table; });
+    if (!rows.length) return '<div class="list"><div class="empty"><b>Abhi koi badlaav record nahi</b>Dashboard ya agent se jo bhi change hoga, yahan likha jayega.</div></div>';
+    var tone = {insert:'ok', update:'info', delete:'bad'};
+    return '<div class="list">' + rows.map(function(a){
+      var who = a.actor_email ? esc(a.actor_email) : 'Voice agent / automation', diff = '';
+      if (a.action === 'update' && a.new_data) {
+        diff = Object.keys(a.new_data).map(function(k){ return '<div>'+esc(k)+': <s>'+esc(fmtVal(a.old_data && a.old_data[k]))+'</s> → <ins>'+esc(fmtVal(a.new_data[k]))+'</ins></div>'; }).join('');
+      } else { var src = a.action === 'delete' ? a.old_data : a.new_data; if (src) diff = Object.keys(src).filter(function(k){ return k !== 'id' && src[k] != null && k !== 'created_at' && k !== 'updated_at'; }).slice(0,12).map(function(k){ return '<div>'+esc(k)+': '+esc(fmtVal(src[k]))+'</div>'; }).join(''); }
+      return '<div class="item"><div class="c1"><div class="t">'+esc(a.summary || (TABLE_LABEL[a.table_name] || a.table_name))+'</div><div class="m">'+who+'</div>'+(diff ? '<details class="diff"><summary>Details</summary><div class="diff-b">'+diff+'</div></details>' : '')+'</div>'+
+        '<div class="c3"><span class="chip muted">'+esc(TABLE_LABEL[a.table_name] || a.table_name)+'</span><span class="chip '+tone[a.action]+'">'+esc(a.action)+'</span></div><div class="c0 m" style="flex-basis:120px;text-align:right">'+esc(fmtDateTime(a.at))+'</div></div>';
+    }).join('') + '</div>';
+  }
+};
+
+/* ---- settings ---- */
+VIEWS.settings = {
+  title:'Settings',
+  sub:function(){ return 'Account, password aur security. Koi bhi badlaav sirf login ke baad hi ho sakta hai.'; },
+  body:function(){
+    var th = lsGet('xyz-theme') || 'auto';
+    return '<div class="set-grid">'+
+      '<div class="card"><div class="card-h"><h3>Account</h3></div><div class="card-b"><div class="who"><span class="avatar">'+esc(initials((state.user.email||'O').split('@')[0]))+'</span><div style="min-width:0"><div class="who-t">Owner</div><div class="who-s" style="font-size:13px">'+esc(state.user.email)+'</div></div></div>'+
+        '<p class="muted" style="font-size:14px">Session sirf is tab me chalta hai. Tab band = logout. 15 minute idle = auto-logout.</p>'+
+        '<div class="actions"><button class="btn" data-action="logout">'+ic('logout',16)+' Logout</button><button class="btn" data-action="signout-all">Sab devices se logout</button></div></div></div>'+
+      '<div class="card"><div class="card-h"><h3>Password badlo</h3></div><div class="card-b"><form id="pwForm" autocomplete="off" novalidate style="display:flex;flex-direction:column;gap:12px">'+
+        fld('Abhi ka password','<input class="inp" type="password" name="cur" autocomplete="current-password" required>')+
+        fld('Naya password','<input class="inp" type="password" name="np" autocomplete="new-password" minlength="10" required>', {hint:'Kam se kam 10 characters. Lambi phrase best hai.'})+
+        fld('Naya password dobara','<input class="inp" type="password" name="np2" autocomplete="new-password" required>')+
+        '<p class="form-err" role="alert" hidden></p><button type="submit" class="btn primary">Password update karo</button></form></div></div>'+
+      '<div class="card"><div class="card-h"><h3>Theme</h3></div><div class="card-b"><div class="seg" role="group" aria-label="Theme">'+[['auto','Auto'],['light','Light'],['dark','Dark']].map(function(t){ return '<button type="button" data-action="set-theme" data-value="'+t[0]+'" aria-pressed="'+(th === t[0])+'">'+t[1]+'</button>'; }).join('')+'</div></div></div>'+
+      '<div class="card"><div class="card-h"><h3>Security kaise kaam karti hai</h3></div><div class="card-b"><ul class="plain"><li>Database har request pe check karta hai ki login karne wala owner list me hai ya nahi. Bina login ya kisi aur account se data nahi milta.</li><li>Delete jaise bhaari kaam se pehle password dobara poocha jata hai.</li><li>Call logs read-only hain. Activity log me har badlaav likha jata hai aur use koi hata nahi sakta.</li></ul></div></div>'+
+    '</div>';
+  }
+};
+function bindSettings(){
+  var f = $('#pwForm'); if (!f || f.dataset.bound) return; f.dataset.bound = '1';
+  f.addEventListener('submit', async function(e){
+    e.preventDefault(); formErr(f,''); var fe = f.elements;
+    if (fe.np.value.length < 10) return formErr(f, 'Naya password kam se kam 10 characters ka ho.');
+    if (fe.np.value !== fe.np2.value) return formErr(f, 'Dono naye password match nahi karte.');
+    if (fe.np.value === fe.cur.value) return formErr(f, 'Naya password purane se alag ho.');
+    setBusy(f, true);
+    var ok = false; try { ok = await verifyPassword(fe.cur.value); } catch(x){}
+    if (!ok) { setBusy(f,false); fe.cur.value = ''; return formErr(f, 'Abhi ka password galat hai.'); }
+    var r = await sb.auth.updateUser({password:fe.np.value}); setBusy(f, false);
+    if (r.error) return formErr(f, r.error.message);
+    try { await sb.auth.signOut({scope:'others'}); } catch(x){}
+    f.reset(); toast('Password badal gaya. Baaki devices logout ho gaye.', 'ok');
+  });
+}
+
+/* ================= events ================= */
+var ACTIONS = {
+  go:function(el){ var v = el.dataset.view; if (location.hash === '#' + v) { ui.view = v; renderView(); document.body.classList.remove('nav-open'); } else location.hash = v; },
+  'goto-stale':function(){ ui.visits.range = 'stale'; location.hash = 'visits'; if (ui.view === 'visits') renderView(); },
+  'nav-open':function(){ document.body.classList.add('nav-open'); },
+  'nav-close':function(){ document.body.classList.remove('nav-open'); },
+  logout:function(){ doLogout('Logout ho gaya.'); },
+  'signout-all':async function(){ await doLogout('Sab devices se logout ho gaya.', 'global'); },
+  refresh:async function(){ await loadAll(); toast('Data refresh ho gaya.'); },
+  'close-dlg':function(el){ var d = el.closest('dialog'); if (d) d.close(); },
+  'set-filter':function(el){ setPath(ui, el.dataset.path, el.dataset.value); renderView(); },
+  'set-theme':function(el){ lsSet('xyz-theme', el.dataset.value); applyTheme(el.dataset.value); renderBody(); bindSettings(); },
+  'toggle-pw':function(el){ var i = el.parentNode.querySelector('input'), show = i.type === 'password'; i.type = show ? 'text' : 'password'; el.innerHTML = ic(show ? 'eyeoff' : 'eye'); },
+  'lead-new':function(){ leadModal(null); }, 'lead-open':function(el){ leadModal(el.dataset.id); },
+  'lead-call':function(el){ callLead(el.dataset.id); },
+  'prop-new':function(){ propModal(null); }, 'prop-open':function(el){ propModal(el.dataset.id); },
+  'visit-new':function(){ visitModal(null); }, 'visit-open':function(el){ visitModal(el.dataset.id); },
+  'call-open':function(el){ callModal(el.dataset.id); },
+  'lead-delete':async function(el){
+    var id = el.dataset.id, l = leadById(id); if (!l) return; var nv = state.visits.filter(function(v){ return v.lead_id === id; }).length;
+    var ok = await deleteRow('leads', id, {title:'Lead delete karna hai?', message:(l.name || fmtPhone(l.phone)) + ' ka lead delete hoga' + (nv ? ' aur iski ' + nv + ' site visit bhi hat jayengi' : '') + '. Call logs rahenge. Yeh wapas nahi aayega.'});
+    if (ok) { var d = el.closest('dialog'); if (d) d.close(); }
+  },
+  'prop-delete':async function(el){
+    var id = el.dataset.id, p = propById(id); if (!p) return;
+    var ok = await deleteRow('properties', id, {title:'Property delete karni hai?', message:p.title + ' hamesha ke liye delete hogi. Isse jude visits rahenge par property "tay nahi" dikhegi. Bechni ho to "Sold" mark karo, delete nahi.'});
+    if (ok) { var d = el.closest('dialog'); if (d) d.close(); }
+  },
+  'visit-delete':async function(el){
+    var id = el.dataset.id;
+    var ok = await deleteRow('site_visits', id, {title:'Visit delete karni hai?', message:'Yeh visit hamesha ke liye hat jayegi. Sirf cancel karna ho to status "Cancelled" kar do.'});
+    if (ok) { var d = el.closest('dialog'); if (d) d.close(); }
+  }
+};
+var CHANGES = {
+  'lead-status':function(el){ var p = {status:el.value}; if (el.value === 'do_not_call') p.consent_to_call = false; patchRow('leads', state.leads, el.dataset.id, p, 'Lead status update ho gaya.'); },
+  'lead-consent':function(el){
+    var l = leadById(el.dataset.id); if (el.checked && l && l.status === 'do_not_call') { el.checked = false; toast('Yeh lead "Do not call" hai. Pehle status badlo.', 'bad'); return; }
+    patchRow('leads', state.leads, el.dataset.id, {consent_to_call:el.checked}, el.checked ? 'Call consent on.' : 'Call consent off.');
+  },
+  'prop-status':function(el){ patchRow('properties', state.properties, el.dataset.id, {status:el.value}, 'Property status update ho gaya.'); },
+  'visit-status':function(el){ patchRow('site_visits', state.visits, el.dataset.id, {status:el.value}, 'Visit status update ho gaya.'); }
+};
+document.addEventListener('click', function(e){
+  var el = e.target.closest('[data-action]'); if (!el) return; var fn = ACTIONS[el.dataset.action]; if (fn) { e.preventDefault(); fn(el, e); }
+});
+document.addEventListener('keydown', function(e){
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('#nav a')) { e.preventDefault(); ACTIONS.go(e.target); }
+});
+document.addEventListener('change', function(e){ var el = e.target.closest('[data-change]'); if (el && CHANGES[el.dataset.change]) CHANGES[el.dataset.change](el); });
+document.addEventListener('input', function(e){ var el = e.target.closest('[data-filter]'); if (el) { setPath(ui, el.dataset.filter, el.value); renderBody(); } });
+
+/* ================= boot ================= */
+(async function boot(){
+  var r = await sb.auth.getSession();
+  if (r.data && r.data.session) { var ok = await enter(r.data.session.user); if (!ok) return; }
+  else showLogin();
+})();
+
+})();
+</script>
+</body>
+</html>
